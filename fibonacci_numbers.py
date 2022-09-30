@@ -3,7 +3,7 @@ def gen_f(a,b):
     ans = []
     c = 0
     while c < 11:
-        b, a = a, a+b #Как же это работает?
+        b, a = a, a+b
         c = c + 1
         ans.append(a)
     del ans[0]
@@ -31,10 +31,6 @@ def gen_f_2(a_2,b_2):
         b_2 = c_2
         m = m + 1
     return (ans_2)
-
-
-
-
 
 
 if __name__ == "__main__":
