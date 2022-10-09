@@ -1,13 +1,6 @@
 #Генератор чисел Фибоначи
-def gen_f(a,b):
-    ans = []
-    c = 0
-    while c < 11:
-        b, a = a, a+b
-        c = c + 1
-        ans.append(a)
-    del ans[0]
-    return (ans)
+
+#Мой вариант
 
 def gen_f_1(a_1,b_1):
     ans_1 = []
@@ -19,6 +12,8 @@ def gen_f_1(a_1,b_1):
         b_1 = c_1
         s = s + 1
     return (ans_1)
+
+#Подсмотренные варианты
 
 def gen_f_2(a_2,b_2):
     ans_2 = []
@@ -32,6 +27,15 @@ def gen_f_2(a_2,b_2):
         m = m + 1
     return (ans_2)
 
+def gen_f(a,b):
+    ans = []
+    c = 0
+    while c < 11:
+        b, a = a, a+b
+        c = c + 1
+        ans.append(a)
+    del ans[0]
+    return (ans)
 
 if __name__ == "__main__":
     print(gen_f(0,1))
