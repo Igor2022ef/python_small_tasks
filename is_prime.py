@@ -6,7 +6,7 @@ def is_prime(num:int):
         else:
             return "Не простое"
     else:
-        if (res[len(res)-1]%2 == 0) or res[len(res)-1] == 0 or res[len(res)-1] == 5 :
+        if (res[len(res)-1]%2 == 0) or res[len(res)-1] == 0 or res[len(res)-1] == 5:
             return "Не простое"
         else:
             p = 3
