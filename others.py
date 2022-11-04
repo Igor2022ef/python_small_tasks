@@ -17,16 +17,28 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 a string of those
 numbers in the form of a phone number.
 '''
+#Мой вариант
 
 def create_phone_number(n: list):
-    #   a = (int(''.join(map(str,n))))
     if len(n) < 10:
         c = [n.append(0) for i in range(10 - len(n))]
         return f"({(''.join(map(str, n[:3])))}) {(''.join(map(str, n[3:6])))}-{(''.join(map(str, n[6:10])))}"
 
+#Подсмотренные варианты
+
+# def create_phone_number1(n1):
+#     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n1)
+
+def create_phone_number2(n2):
+    if len(n2) < 10:
+        c = [n2.append(0) for i in range(10 - len(n2))]
+    n2 = ''.join(map(str,n2))
+    return "(%s) %s-%s" % (n2[:3], n2[3:6], n2[6:])
 
 
 if __name__ == "__main__":
     sentence = 'Sally sells sea shells by the sea shore'
     print(spin_words(sentence))
     print(create_phone_number([0, 0, 1]))
+#    print(create_phone_number1([0, 0, 1]))
+    print(create_phone_number2([0, 0, 1]))
