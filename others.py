@@ -19,12 +19,14 @@ numbers in the form of a phone number.
 '''
 #Мой вариант
 
-def create_phone_number(n: list):
+def create_phone_number(n:list):
     if len(n) < 10:
-        c = [n.append(0) for i in range(10 - len(n))]
-        return f"({(''.join(map(str, n[:3])))}) {(''.join(map(str, n[3:6])))}-{(''.join(map(str, n[6:10])))}"
+       c = [n.append(0) for i in range(10 - len(n))]
+    p = ''.join(map(str, n))
+    return f"({p[:3]}) {p[3:6]}-{p[6:10]}"
 
-#Подсмотренные варианты
+
+   #Подсмотренные варианты
 
 # def create_phone_number1(n1):
 #     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n1)
@@ -39,6 +41,6 @@ def create_phone_number2(n2):
 if __name__ == "__main__":
     sentence = 'Sally sells sea shells by the sea shore'
     print(spin_words(sentence))
-    print(create_phone_number([0, 0, 1]))
+    print(create_phone_number([0, 0, 1,3,4,5,6,7,8,9]))
 #    print(create_phone_number1([0, 0, 1]))
-    print(create_phone_number2([0, 0, 1]))
+    print(create_phone_number2([0, 0, 1,3,4,5,6,7,8,9]))
