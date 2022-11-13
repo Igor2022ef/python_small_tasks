@@ -15,10 +15,10 @@ def add_binary(a,b):
 #Подсмотренные варианты
 
 def add_binary_1(a,b):
-    return bin(a+b)[2:]       #Такой синтаксис работает только с bin?
+    return bin(a+b)[2:]
 
 def add_binary_2(a,b):
-    return '{0:b}'.format(a + b)   #Этот код и следующий не понимаю
+    return '{0:b}'.format(a + b)
 
 def add_binary_3(a,b):
     return f"{a + b:b}"
