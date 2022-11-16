@@ -1,4 +1,8 @@
 '''
+Всего 3 различные задачи
+'''
+
+'''
 Write a function that takes in a string of one or more words, 
 and returns the same string, but with all five or more letter words reversed 
 (Just like the name of this Kata). Strings passed in will 
@@ -44,3 +48,22 @@ if __name__ == "__main__":
     print(create_phone_number([0, 0, 1,3,4,5,6,7,8,9]))
 #    print(create_phone_number1([0, 0, 1]))
     print(create_phone_number2([0, 0, 1,3,4,5,6,7,8,9]))
+
+'''
+Функция получает строку и возвращает строку в которой четные знаки в словах
+стали - Заглавными, нечетные - сторочными.
+Нулевой индекс четный, и вам нужно начинать заново для каждого слова.
+
+Передаваемая строка будет состоять только из букв алфавита и пробелов (' '). 
+Пробелы будут присутствовать только в том случае, если слов несколько. 
+Слова будут разделены одним пробелом (' ').
+'''
+
+def to_weird_case(words):
+    d=[]
+    y = words.split()
+    for i in y:
+        j=list(map(str, str(i)))
+        c=[j[n].title() if n==0 or n%2==0 else j[n].lower() for n in range(len(j))]
+        d.append(''.join(c))
+    return ' '.join(d)
