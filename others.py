@@ -1,5 +1,5 @@
 '''
-Всего 3 различные задачи
+Всего 4 различные задачи
 '''
 
 '''
@@ -18,8 +18,7 @@ def spin_words(sentence):
 
 '''
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns
-a string of those
-numbers in the form of a phone number.
+a string of those numbers in the form of a phone number.
 '''
 #Мой вариант
 
@@ -67,3 +66,27 @@ def to_weird_case(words):
         c=[j[n].title() if n==0 or n%2==0 else j[n].lower() for n in range(len(j))]
         d.append(''.join(c))
     return ' '.join(d)
+
+'''
+Вариация кода Цезаря.
+Принимаем на вход строку - латиница и любые символы.
+Перекодируем тольео латиницу на 13 позиций по алфавиту, 
+  любые символы оставляем, как есть. Замечание - литеры могут быть, как 
+  строчными, так и заглавними.
+Возвращаем строку
+'''
+def rot13(message):
+    l_1 = list(map(str,message))
+    al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+    x=list(map(str,al))
+    i = -1
+    res=[]
+    while(i<len(message)-1):
+        i+=1
+        match (l_1[i] in al):
+            case False:
+                res.append(l_1[i])
+            case True:
+                tr=x.index(l_1[i])
+                res.append(x[tr+26]) if (tr+26)<=51 else res.append(x[(tr+25)-51])
+    return "".join(res)
