@@ -29,24 +29,10 @@ def create_phone_number(n:list):
     return f"({p[:3]}) {p[3:6]}-{p[6:10]}"
 
 
-   #Подсмотренные варианты
-
-# def create_phone_number1(n1):
-#     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n1)
-
-def create_phone_number2(n2):
-    if len(n2) < 10:
-        c = [n2.append(0) for i in range(10 - len(n2))]
-    n2 = ''.join(map(str,n2))
-    return "(%s) %s-%s" % (n2[:3], n2[3:6], n2[6:])
-
-
 if __name__ == "__main__":
     sentence = 'Sally sells sea shells by the sea shore'
     print(spin_words(sentence))
     print(create_phone_number([0, 0, 1,3,4,5,6,7,8,9]))
-#    print(create_phone_number1([0, 0, 1]))
-    print(create_phone_number2([0, 0, 1,3,4,5,6,7,8,9]))
 
 '''
 Функция получает строку и возвращает строку в которой четные знаки в словах
@@ -70,7 +56,7 @@ def to_weird_case(words):
 '''
 Вариация кода Цезаря.
 Принимаем на вход строку - латиница и любые символы.
-Перекодируем тольео латиницу на 13 позиций по алфавиту, 
+Перекодируем только латиницу на 13 позиций по алфавиту, 
   любые символы оставляем, как есть. Замечание - литеры могут быть, как 
   строчными, так и заглавними.
 Возвращаем строку
@@ -90,3 +76,23 @@ def rot13(message):
                 tr=x.index(l_1[i])
                 res.append(x[tr+26]) if (tr+26)<=51 else res.append(x[(tr+25)-51])
     return "".join(res)
+
+'''
+Получаем массив точных чисел. 
+Возвращаем номер числа такого, что сумма всех чисел слева от него равна сумме всех чисел справа от него.
+Если такого числа нет в исходном списке, то возвращается -1
+'''
+
+def find_even_index(arr: list(int)):
+    i = 0
+    while i < (len(arr)):
+        if sum(arr[:(i)]) != sum(arr[(i+1):]):
+                i += 1
+        else:
+            return i
+    return -1
+
+
+if __name__ == '__main__':
+    arr = [1,2,3,4,3,2,1]
+    print(find_even_index(arr))
