@@ -1,5 +1,5 @@
 '''
-Всего 4 различные задачи
+Всего 7 различные задачи
 '''
 
 '''
@@ -28,11 +28,6 @@ def create_phone_number(n:list):
     p = ''.join(map(str, n))
     return f"({p[:3]}) {p[3:6]}-{p[6:10]}"
 
-
-if __name__ == "__main__":
-    sentence = 'Sally sells sea shells by the sea shore'
-    print(spin_words(sentence))
-    print(create_phone_number([0, 0, 1,3,4,5,6,7,8,9]))
 
 '''
 Функция получает строку и возвращает строку в которой четные знаки в словах
@@ -83,7 +78,7 @@ def rot13(message):
 Если такого числа нет в исходном списке, то возвращается -1
 '''
 
-def find_even_index(arr: list(int)):
+def find_even_index(arr):
     i = 0
     while i < (len(arr)):
         if sum(arr[:(i)]) != sum(arr[(i+1):]):
@@ -92,7 +87,30 @@ def find_even_index(arr: list(int)):
             return i
     return -1
 
+'''
+Принимаем на вход строку латиницы со знаками препинания.
+Возвращаем строку латиницы изменив каждое слово, так что первая буква 
+становится последней и после нее добавляется ay
+Замечание: знаки препинания на входе, отделены от слов пробелом. Знаки 
+препинания возвращаются "как есть" без добавлений.
+'''
+def pig_it(text):
+    return " ".join(i[1:]+i[:1]+"ay" if i.isalnum() else i for i in text.split())
 
-if __name__ == '__main__':
-    arr = [1,2,3,4,3,2,1]
-    print(find_even_index(arr))
+'''
+Получаем список, возвращаем список в котором все нули убраны после всех 
+чисел. Порядок чисел не изменен
+'''
+#Мой вариант:
+
+def move_zeros(lst):
+    x=[]
+    y=[]
+    res=[y.append(i) if i==0 else x.append(i) for i in lst]
+    return x+y
+
+
+#Не мой вариант, но красивый:
+
+    return [x for x in lst if x] + [0] * lst.count(0)
+
