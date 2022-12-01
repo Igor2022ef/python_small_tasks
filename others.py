@@ -114,3 +114,20 @@ def move_zeros(lst):
 
     return [x for x in lst if x] + [0] * lst.count(0)
 
+'''
+В этом примере вы должны проверить, является ли строка ввода пользователя 
+буквенно-цифровой. Данная строка не является nil/null/NULL/None, поэтому 
+вам не нужно это проверять.
+
+Строка должна быть буквенно-цифровой при соблюдении следующих условий:
+
+Хотя бы один символ ("" недействителен)
+Допустимые символы: прописные/строчные латинские буквы и цифры от 0 до 9.
+Без пробелов/подчеркивания
+'''
+
+
+def alphanumeric(password):
+    al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
+    return (False if list(password)==[] else all([True if i in al else False for i in list(password)]))
+
