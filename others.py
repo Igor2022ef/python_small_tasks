@@ -60,16 +60,15 @@ def rot13(message):
     l_1 = list(map(str,message))
     al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
     x=list(map(str,al))
-    i = -1
     res=[]
-    while(i<len(message)-1):
-        i+=1
+    for i in range(len(message)):
         match (l_1[i] in al):
             case False:
                 res.append(l_1[i])
             case True:
                 tr=x.index(l_1[i])
                 res.append(x[tr+26]) if (tr+26)<=51 else res.append(x[(tr+25)-51])
+
     return "".join(res)
 
 '''
