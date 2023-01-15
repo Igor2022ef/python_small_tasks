@@ -1,2 +1,2 @@
 # python_small_tasks
-Smoll tasks that I solved
+Small tasks that I solved
