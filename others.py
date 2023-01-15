@@ -124,9 +124,76 @@ def move_zeros(lst):
 Допустимые символы: прописные/строчные латинские буквы и цифры от 0 до 9.
 Без пробелов/подчеркивания
 '''
+'''
+Для этой задачи есть не мой вариант с подключением бибилотеки
+import string
+Решение под комментами
 
+'''
 
 def alphanumeric(password):
     al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
     return (False if list(password)==[] else all([True if i in al else False for i in list(password)]))
+    # return (False if list(password)==[] else all([True if i in (string.ascii_letters+digits) else False for i in list(password)]))
 
+'''
+Перекодировка массива rgb. Дан массив из трех десятичных чисел. Каждое из чисел перекодировать в шестнадцатиричную систему
+исчисления и результат представить в виде единой строки.
+'''
+
+def rgb(r,g,b):
+    y=[r,g,b]
+    x = ['A', 'B', 'C', 'D', 'E', 'F']
+    res = []
+    for i in y:
+        if i<0:
+            i=0
+        if i>255:
+            i=255
+        c=i//16
+        if 0<=c<=9:
+            res.append(c)
+        elif 10 <=c<= 15:
+            res.append(x[c - 10])
+        if 0 <= (i - (c * 16)) <= 9:
+            res.append(i-(c*16))
+        elif 10<=(i-c*16)<=15:
+            res.append(x[((i-c*16)-10)])
+    return "".join(map(str, res))
+'''
+Ниже вариант красивый, но не мой. Со строкой-формат разбираться не стал.
+'''
+# def limit(num):
+#     if num < 0:
+#         return 0
+#     if num > 255:
+#         return 255
+#     return num
+#
+# def rgb(r, g, b):
+#     return "{:02X}{:02X}{:02X}".format(limit(r), limit(g), limit(b))
+
+'''
+Нахождение локальных максимумов списка. Ответ: массив из номеров позиций максимумов в исходном списке и соответственно
+самих значений максимумов {'pos': [...], 'peaks': [...]}. Первый и последний элементы массива не будут считаться пиками.
+Также проблемма-плато. [1, 2, 2, 2, 1] имеет пик, а [1, 2, 2, 2, 3] и [1, 2, 2, 2, 2] — нет. 
+В случае плато-пика, возвращается только положение и значение начала плато.
+'''
+def pick_peaks(arr):
+    pos = []
+    peaks = []
+    res={'pos':pos, 'peaks':peaks}
+    i=0
+    while i<(len(arr)-2):
+        i+=1
+        if arr[i-1]<arr[i] and arr[i+1]<arr[i]:
+            pos.append(i)
+            peaks.append(arr[i])
+        elif arr[i+1]==arr[i]:
+            j=i
+            while arr[i+1]==arr[i] and i!=len(arr)-2:
+                i+=1
+            if arr[i+1]<arr[i] and arr[j-1]<arr[j]:
+                pos.append(j)
+                peaks.append(arr[j])
+    return res
