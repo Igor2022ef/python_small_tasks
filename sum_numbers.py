@@ -4,11 +4,9 @@ Additionally, if the number is negative, return 0.
 '''
 
 
-def solution(number:int):
-	if number > 0:
-		return sum([i for i in range(number) if i%3 == 0 or i%5 == 0])
-	else:
-		return 0
+def solution(i):
+    res = [i if (i>=0 and (i % 3 == 0 or i % 5 == 0)) else 0 for i in range(i,25,1)]
+    return res, sum(res)
 
 if __name__ == '__main__':
-	print(solution(10))
+	print(solution(-10))
