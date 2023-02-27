@@ -56,7 +56,7 @@ def to_weird_case(words):
   строчными, так и заглавними.
 Возвращаем строку
 '''
-def rot13(message):
+def caesar_code(message):
     l_1 = list(map(str,message))
     al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
     x=list(map(str,al))
@@ -141,7 +141,7 @@ def alphanumeric(password):
 исчисления и результат представить в виде единой строки.
 '''
 
-def rgb(r,g,b):
+def recoding_10_16(r,g,b):
     y=[r,g,b]
     x = ['A', 'B', 'C', 'D', 'E', 'F']
     res = []
@@ -215,7 +215,7 @@ def pick_peaks(arr):
 раствор([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20])
 # возвращает "-10--8,-6,-3-1,3-5,7-11,14,15,17-20"
 '''
-def solution(args):
+def list_ordering(args):
     l_2 = []
     l_res=[]
     l_res1 = []
