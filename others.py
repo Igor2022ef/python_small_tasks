@@ -10,11 +10,11 @@ consist of only letters and spaces. Spaces will be included
 only when more than one word is present.
 '''
 
-def spin_words(sentence):
+def spin_words_more_5_letters(sentence):
     res = []
     words = sentence.split()
     x = [res.append(i[::-1]) if len(i) >= 5 else res.append(i) for i in words] 
-    return " ".join(res)
+    print( " ".join(res))
 
 '''
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns
@@ -26,7 +26,7 @@ def create_phone_number(n:list):
     if len(n) < 10:
        c = [n.append(0) for i in range(10 - len(n))]
     p = ''.join(map(str, n))
-    return f"({p[:3]}) {p[3:6]}-{p[6:10]}"
+    print( f"({p[:3]}) {p[3:6]}-{p[6:10]}")
 
 
 '''
@@ -46,7 +46,7 @@ def to_weird_case(words):
         j=list(map(str, str(i)))
         c=[j[n].title() if n==0 or n%2==0 else j[n].lower() for n in range(len(j))]
         d.append(''.join(c))
-    return ' '.join(d)
+    print( ' '.join(d))
 
 '''
 Вариация кода Цезаря.

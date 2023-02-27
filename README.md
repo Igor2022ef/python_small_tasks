@@ -12,7 +12,7 @@ List of tasks
 
 Tasks in others
 
-7. spin_words
+7. spin_words_more_5_letters
 8. create_phone_number
 9. to_weird_case 
 10. caesar_code
