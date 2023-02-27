@@ -9,4 +9,4 @@ List of tasks
 6. make_str_not_Empty
 
 Tasks in others
-7. 
+
