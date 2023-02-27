@@ -7,5 +7,6 @@ List of tasks
 4. is_primery
 5. add_binary
 6. make_str_not_Empty
+
 Tasks in others
 7. 
