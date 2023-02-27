@@ -2,30 +2,17 @@
 
 #Мой вариант
 
-def gen_f_1(a_1,b_1):
-    ans_1 = []
-    s = 0
-    while s < 11:
-        c_1 = a_1 + b_1
-        ans_1.append(c_1)
-        a_1 = b_1
-        b_1 = c_1
-        s = s + 1
-    return (ans_1)
+def gen_f_1(i,j):
+    t=[i,j]
+    while j<50:
+        s=i+j
+        t.append(s)
+        i=j
+        j=s
+    return t
 
 #Подсмотренные варианты
 
-def gen_f_2(a_2,b_2):
-    ans_2 = []
-    m = 0
-    while m < 11:
-        c_2 = a_2 + b_2
-        if c_2 % 2 != 0:
-            ans_2.append(c_2)
-        a_2 = b_2
-        b_2 = c_2
-        m = m + 1
-    return (ans_2)
 
 def gen_f(a,b):
     ans = []
@@ -40,4 +27,3 @@ def gen_f(a,b):
 if __name__ == "__main__":
     print(gen_f(0,1))
     print(gen_f_1(0, 1))
-    print(gen_f_2(0, 1))

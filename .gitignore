@@ -2,6 +2,7 @@
 __pycache__/
 #*.py[cod]
 #*$py.class
+transit_2.py
 
 # C extensions
 *.so
@@ -127,3 +128,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/transit_2.py
