@@ -3,6 +3,7 @@ __pycache__/
 #*.py[cod]
 #*$py.class
 transit_2.py
+Transit.py
 
 # C extensions
 *.so

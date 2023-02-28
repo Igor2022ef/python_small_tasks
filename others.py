@@ -14,7 +14,8 @@ def spin_words_more_5_letters(sentence):
     res = []
     words = sentence.split()
     x = [res.append(i[::-1]) if len(i) >= 5 else res.append(i) for i in words] 
-    print( " ".join(res))
+    res=" ".join(res)
+    print(f"spin_words_more_5_letters: {res}")
 
 '''
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns
@@ -26,7 +27,7 @@ def create_phone_number(n:list):
     if len(n) < 10:
        c = [n.append(0) for i in range(10 - len(n))]
     p = ''.join(map(str, n))
-    print( f"({p[:3]}) {p[3:6]}-{p[6:10]}")
+    print( f"create_phone_number: ({p[:3]}) {p[3:6]}-{p[6:10]}")
 
 
 '''
@@ -46,7 +47,8 @@ def to_weird_case(words):
         j=list(map(str, str(i)))
         c=[j[n].title() if n==0 or n%2==0 else j[n].lower() for n in range(len(j))]
         d.append(''.join(c))
-    print( ' '.join(d))
+    res=' '.join(d)
+    print(f"to_weird_case: {res}" )
 
 '''
 Вариация кода Цезаря.
@@ -69,7 +71,8 @@ def caesar_code(message):
                 tr=x.index(l_1[i])
                 res.append(x[tr+26]) if (tr+26)<=51 else res.append(x[(tr+25)-51])
 
-    return "".join(res)
+    res="".join(res)
+    print(f"caesar_code: {res}")
 
 '''
 Получаем массив точных чисел. 
@@ -77,14 +80,16 @@ def caesar_code(message):
 Если такого числа нет в исходном списке, то возвращается -1
 '''
 
-def find_even_index(arr):
+def find_even_index(arr:list):
     i = 0
     while i < (len(arr)):
         if sum(arr[:(i)]) != sum(arr[(i+1):]):
                 i += 1
         else:
-            return i
-    return -1
+            print(f"find_even_index: {i}")
+            break
+    if i == (len(arr)):
+        print(f"find_even_index: -1")
 
 '''
 Принимаем на вход строку латиницы со знаками препинания.
@@ -93,8 +98,10 @@ def find_even_index(arr):
 Замечание: знаки препинания на входе, отделены от слов пробелом. Знаки 
 препинания возвращаются "как есть" без добавлений.
 '''
-def pig_it(text):
-    return " ".join(i[1:]+i[:1]+"ay" if i.isalnum() else i for i in text.split())
+def line_reversal(text):
+    res =( " ".join(i[1:]+i[:1]+"ay" if i.isalnum() else i for i in text.split()))
+    print(f"line_reversal: {res}")
+
 
 '''
 Получаем список, возвращаем список в котором все нули убраны после всех 
@@ -106,7 +113,7 @@ def move_zeros(lst):
     x=[]
     y=[]
     res=[y.append(i) if i==0 else x.append(i) for i in lst]
-    return x+y
+    print(f"move_zeros: {x+y} ТО ЛИ КОД НЕ ВЕРНЫЙ ТО ЛИ УСЛОВИЕ - ПРОВЕРЬ")
 
 
 #Не мой вариант, но красивый:
