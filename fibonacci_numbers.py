@@ -9,7 +9,7 @@ def gen_f_1(i,j):
         t.append(s)
         i=j
         j=s
-    return t
+    print(f"fibonacci_numbers MY: {t}")
 
 #Подсмотренные варианты
 
@@ -22,8 +22,5 @@ def gen_f(a,b):
         c = c + 1
         ans.append(a)
     del ans[0]
-    return (ans)
-
-if __name__ == "__main__":
-    print(gen_f(0,1))
-    print(gen_f_1(0, 1))
+    print (f"fibonacci_numbers NOT MY: {ans}")
+    print(f"{50*'*'}")

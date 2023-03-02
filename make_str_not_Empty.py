@@ -2,12 +2,8 @@
 Make str. Is not longer than 140 points and is not empty. And so on...
 '''
 
-def generate_hashtag(s:str):
+def make_str_not_Empty(s:str):
     if s != "" and s.isspace() is not True and len(s) <= 140:
-        return ("#" + s).title().replace(" ", "")
+        print (f"make_str_not_Empty: {('#' + s).title().replace(' ', '')}")
     else:
-        return False
-
-
-if __name__ == '__main__':
-    print(generate_hashtag('oijgoeqh uhgqeih'))
+        print(f"make_str_not_Empty: {False}")

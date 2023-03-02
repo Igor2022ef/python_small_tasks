@@ -113,7 +113,7 @@ def move_zeros(lst):
     x=[]
     y=[]
     res=[y.append(i) if i==0 else x.append(i) for i in lst]
-    print(f"move_zeros: {x+y} ТО ЛИ КОД НЕ ВЕРНЫЙ ТО ЛИ УСЛОВИЕ - ПРОВЕРЬ")
+    print(f"move_zeros: {x+y}")
 
 
 #Не мой вариант, но красивый:
@@ -127,7 +127,7 @@ def move_zeros(lst):
 
 Строка должна быть буквенно-цифровой при соблюдении следующих условий:
 
-Хотя бы один символ ("" недействителен)
+Хотя бы один символ (" " недействителен)
 Допустимые символы: прописные/строчные латинские буквы и цифры от 0 до 9.
 Без пробелов/подчеркивания
 '''
@@ -140,7 +140,7 @@ import string
 
 def alphanumeric(password):
     al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
-    return (False if list(password)==[] else all([True if i in al else False for i in list(password)]))
+    print (f"alphanumeric: {False if list(password) == [] else all([True if i in al else False for i in list(password)])}")
     # return (False if list(password)==[] else all([True if i in (string.ascii_letters+digits) else False for i in list(password)]))
 
 '''
@@ -166,7 +166,8 @@ def recoding_10_16(r,g,b):
             res.append(i-(c*16))
         elif 10<=(i-c*16)<=15:
             res.append(x[((i-c*16)-10)])
-    return "".join(map(str, res))
+    res = "".join(map(str, res))
+    print(f"recoding_10_16: {res}")
 
 # Ниже вариант красивый, но не мой. Со строкой-формат разбираться не стал.
 
@@ -203,7 +204,7 @@ def pick_peaks(arr):
             if arr[i+1]<arr[i] and arr[j-1]<arr[j]:
                 pos.append(j)
                 peaks.append(arr[j])
-    return res
+    print(f"pick_peaks: {res}")
 
 '''
 Формат для выражения упорядоченного списка целых чисел заключается в использовании:
@@ -245,4 +246,5 @@ def list_ordering(args):
                 l_2 = []
         elif len(l_2)==0:
             l_res.append(args[i])
-    return "".join([str(_)+"," for _ in l_res])[:-1]
+    res = "".join([str(_)+"," for _ in l_res])[:-1]
+    print(f"list_ordering: {res}")

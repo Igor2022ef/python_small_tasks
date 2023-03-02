@@ -15,10 +15,9 @@ def is_prime(num:int):
                 if num%p != 0:
                     p += 1
                 else:
-                    return "Не простое"
+                    print ("is_prime: Не простое")
                     break
-            return "Простое"
+            print ("is_prime: Простое")
+            print(f"{50 * '*'}")
 
 
-if __name__ == '__main__':
-    print(is_prime(73))

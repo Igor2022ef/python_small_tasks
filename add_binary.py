@@ -10,22 +10,18 @@ def add_binary(a,b):
     while numb > 0:
         result = str(numb % 2) + result
         numb = numb // 2
-    return result
+    print(f"add_binary MY: {result}")
 
 #Подсмотренные варианты
 
 def add_binary_1(a,b):
-    return bin(a+b)[2:]
+    print(f"add_binary_2 NOT MY: {bin(a + b)[2:]}")
 
 def add_binary_2(a,b):
-    return '{0:b}'.format(a + b)
+    print(f"add_binary_2 NOT MY: {'{0:b}'.format(a + b)}")
 
 def add_binary_3(a,b):
-    return f"{a + b:b}"
+    print(f"add_binary_3 NOT MY: {a + b:b}")
+    print(f"{50 * '*'}")
 
 
-if __name__ == '__main__':
-    print(add_binary(1,9))
-    print(add_binary_1(1,9))
-    print(add_binary_2(1,9))
-    print(add_binary_3(1,9))

@@ -10,7 +10,11 @@ def time_make(func):
     def wrapper(*args,**kwargs):
             start_time = time.perf_counter_ns()
             res = func(*args,**kwargs)
-            print(f'Время работы функции: {time.perf_counter_ns() - start_time}')
+            '''
+                                                        ВОПРОС: Как вставить в строку ниже название текущей функции??????
+            '''
+
+            print(f'Время работы функции {func}: {time.perf_counter_ns() - start_time}')
             return res
     return wrapper
 
@@ -18,13 +22,12 @@ def time_make(func):
 
 @time_make
 def FizzBuzz():
-    return ([
+    print ([
             'Fizz' if (i % 3 == 0 and i % 5 != 0) else i and
             'Buzz' if (i % 5 == 0 and i % 3 != 0) else i and
             'FizzBuzz' if (i % 3 == 0 and i % 5 == 0) else i
             for i in range(1, 101, 1)
         ])
-
 '''
 # Подсмотренные варианты
 # '''
@@ -48,9 +51,4 @@ def var_3():
             i += 1
 
 
-if __name__ == '__main__':
-    print(FizzBuzz())
-    var_1()
-    var_2()
-    var_3()
 
