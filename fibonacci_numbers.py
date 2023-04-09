@@ -2,7 +2,7 @@
 
 #Мой вариант
 
-def gen_f_1(i,j):
+def fibonacci_numbers(i,j):
     t=[i,j]
     while j<50:
         s=i+j
@@ -14,7 +14,7 @@ def gen_f_1(i,j):
 #Подсмотренные варианты
 
 
-def gen_f(a,b):
+def fibonacci_numbers_1(a,b):
     ans = []
     c = 0
     while c < 11:
