@@ -5,6 +5,7 @@ from is_prime import is_prime
 from add_binary import *
 from make_str_not_Empty import make_str_not_Empty
 from others import *
+from dictionaries_tasks import *
 
 def main():
 
@@ -34,6 +35,9 @@ def main():
     recoding_10_16(9, 14, 178)
     pick_peaks([2,4,78,11,27,12,5,34,35,38,5])
     list_ordering([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20])
+
+# From dictionaries_tasks
+    dictionary_maker([54, 10, 23, 'condition', 5, 18, 'start', 3, 6, 'second', 8, 'foo'])
 
 if __name__ == '__main__':
     main()
