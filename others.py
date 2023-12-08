@@ -21,7 +21,14 @@ def spin_words_more_5_letters(sentence):
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns
 a string of those numbers in the form of a phone number.
 '''
-#Мой вариант
+#Два мои варианта
+
+def create_phone_number1(y):
+    from random import randint
+    x=[]
+    item = [x.append(randint(0, 9)) for i in range(10)]
+    res = "".join(map(str,x))
+    print(f"create_phone_number: {res[:3:]} {res[3:6:]}-{res[6:8:]}-{res[8::]}")
 
 def create_phone_number(n:list):
     if len(n) < 10:
