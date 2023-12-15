@@ -51,8 +51,8 @@ def to_weird_case(words):
     d=[]
     y = words.split()
     for i in y:
-        j=list(map(str, str(i)))
-        c=[j[n].title() if n==0 or n%2==0 else j[n].lower() for n in range(len(j))]
+        j=list(map(str, i))
+        c=[j[n].title() if n%2==0 else j[n].lower() for n in range(len(j))]
         d.append(''.join(c))
     res=' '.join(d)
     print(f"to_weird_case: {res}" )
@@ -76,7 +76,7 @@ def caesar_code(message):
                 res.append(l_1[i])
             case True:
                 tr=x.index(l_1[i])
-                res.append(x[tr+26]) if (tr+26)<=51 else res.append(x[(tr+25)-51])
+                res.append(x[tr+26]) if tr<(len(x)/2) else res.append(x[(tr-26)])
 
     res="".join(res)
     print(f"caesar_code: {res}")
