@@ -50,9 +50,8 @@ def create_phone_number(n:list):
 def to_weird_case(words):
     d=[]
     y = words.split()
-    for i in y:
-        j=list(map(str, i))
-        c=[j[n].title() if n%2==0 else j[n].lower() for n in range(len(j))]
+    for j in y:
+        c=[j[n].upper() if (n==0 or n%2==0) else j[n].lower() for n in range(len(j))]
         d.append(''.join(c))
     res=' '.join(d)
     print(f"to_weird_case: {res}" )
