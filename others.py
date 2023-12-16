@@ -10,11 +10,10 @@ consist of only letters and spaces. Spaces will be included
 only when more than one word is present.
 '''
 
-def spin_words_more_5_letters(sentence):
-    res = []
+def spin_words_more_5_letters(sentence:str):
     words = sentence.split()
-    x = [res.append(i[::-1]) if len(i) >= 5 else res.append(i) for i in words] 
-    res=" ".join(res)
+    x = [i[::-1] if len(i) >= 5 else i for i in words]
+    res=" ".join(x)
     print(f"spin_words_more_5_letters: {res}")
 
 '''
