@@ -23,12 +23,12 @@ a string of those numbers in the form of a phone number.
 '''
 #Два мои варианта
 
-def create_phone_number1(y):
+def create_phone_number1(y:int):
     from random import randint
     x=[]
-    item = [x.append(randint(0, 9)) for i in range(10)]
+    item = [x.append(randint(0, 9)) for i in range(y)]
     res = "".join(map(str,x))
-    print(f"create_phone_number: {res[:3:]} {res[3:6:]}-{res[6:8:]}-{res[8::]}")
+    print(f"create_phone_number: {res[:3:]} {res[3:6:]}-{res[6:8:]}-{res[8:10:]}")
 
 def create_phone_number(n:list):
     if len(n) < 10:
