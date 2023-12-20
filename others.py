@@ -136,17 +136,10 @@ def move_zeros(lst):
 Допустимые символы: прописные/строчные латинские буквы и цифры от 0 до 9.
 Без пробелов/подчеркивания
 '''
-'''
-Для этой задачи есть не мой вариант с подключением бибилотеки
-import string
-Решение под комментами
 
-'''
 
 def alphanumeric(password):
-    al = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
-    print (f"alphanumeric: {False if list(password) == [] else all([True if i in al else False for i in list(password)])}")
-    # return (False if list(password)==[] else all([True if i in (string.ascii_letters+digits) else False for i in list(password)]))
+    return [print("Все ок") if password.isalnum() else print("Не попали, перепешите строку")]
 
 '''
 Перекодировка массива rgb. Дан массив из трех десятичных чисел. Каждое из чисел перекодировать в шестнадцатиричную систему
