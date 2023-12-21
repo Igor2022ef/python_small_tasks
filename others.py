@@ -165,7 +165,7 @@ def recoding_10_16(x:list):
     num_full="".join(map(str, res[::-1]))
     print(num_full)
 
-# Ниже вариант красивый, но не мой. Со строкой-формат разбираться не стал.
+# Ниже вариант красивый, но не мой.
 
 # def limit(num):
 #     if num < 0:
