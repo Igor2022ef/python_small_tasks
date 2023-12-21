@@ -146,26 +146,24 @@ def alphanumeric(password):
 исчисления и результат представить в виде единой строки.
 '''
 
-def recoding_10_16(r,g,b):
-    y=[r,g,b]
-    x = ['A', 'B', 'C', 'D', 'E', 'F']
-    res = []
-    for i in y:
-        if i<0:
-            i=0
-        if i>255:
-            i=255
-        c=i//16
-        if 0<=c<=9:
-            res.append(c)
-        elif 10 <=c<= 15:
-            res.append(x[c - 10])
-        if 0 <= (i - (c * 16)) <= 9:
-            res.append(i-(c*16))
-        elif 10<=(i-c*16)<=15:
-            res.append(x[((i-c*16)-10)])
-    res = "".join(map(str, res))
-    print(f"recoding_10_16: {res}")
+def recoding_10_16(x:list):
+    e=[0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+    res=[]
+    for i in x:
+        num=i//16
+        modulo=i%16
+        if modulo!=0 and num!=0:
+            while num>0:
+                res1=[res.append(modulo) if modulo<10 else res.append(e[modulo])]
+                var=num
+                modulo = var % 16
+                num=num//16
+            res1=[res.append(var) if var<10 else res.append(e[var])]
+        elif modulo!=0 and num==0:
+            res.append(modulo)
+        else: res.append(num*10)
+    num_full="".join(map(str, res[::-1]))
+    print(num_full)
 
 # Ниже вариант красивый, но не мой. Со строкой-формат разбираться не стал.
 
