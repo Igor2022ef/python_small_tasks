@@ -2,25 +2,22 @@
 
 #Мой вариант
 
-def fibonacci_numbers(i,j):
-    t=[i,j]
-    while j<50:
+def fibonacci_numbers(border, i,j):
+    res=[i,j]
+    while j<border:
         s=i+j
-        t.append(s)
+        res.append(s)
         i=j
         j=s
-    print(f"fibonacci_numbers MY: {t}")
+    print(f"fibonacci_numbers MY: {res}")
 
 #Подсмотренные варианты
 
 
-def fibonacci_numbers_1(a,b):
+def fibonacci_numbers_1(border_1, a,b):
     ans = []
-    c = 0
-    while c < 11:
+    for c in range(border_1):
         b, a = a, a+b
-        c = c + 1
         ans.append(a)
-    del ans[0]
     print (f"fibonacci_numbers NOT MY: {ans}")
     print(f"{50*'*'}")

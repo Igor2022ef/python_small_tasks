@@ -11,11 +11,11 @@ def main():
 
 # From single scripts
     FizzBuzz()
-    var_1()
     var_2()
+    var_3()
     sum_numbers(-10)
-    fibonacci_numbers(0, 1)
-    fibonacci_numbers_1(0, 1)
+    fibonacci_numbers(50, 0, 1)
+    fibonacci_numbers_1(10, 0, 1)
     is_prime(73)
     add_binary(1, 9)
     add_binary_1(1, 9)
